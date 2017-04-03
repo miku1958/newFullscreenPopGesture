@@ -13,14 +13,14 @@
 
 
 
-#使用方法
+# 使用方法
 
 直接把UINavigationController+newFullscreenPopGesture.swift文件拖进项目就行
 
 如果想要为UINavigationController做拓展,尽量不要重写viewDidLoad()就行
 
 
-#已知问题
+# 已知问题
 
 返回时到1/4屏幕松手,左上角的返回按钮文字有可能会乱跳
 pop结束后左上角的返回图标有可能不消失
