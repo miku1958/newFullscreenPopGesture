@@ -10,24 +10,7 @@ import UIKit
 
 extension UINavigationController:UIGestureRecognizerDelegate{
 	
-	private static let staticPan = UIPanGestureRecognizer()
-	private var pan: UIPanGestureRecognizer {
-		get {
-			
-			return UINavigationController.staticPan
-		}
-
-	}
-
-	
 	open override func viewDidLoad() {
-		guard let hasPan = interactivePopGestureRecognizer?.view?.gestureRecognizers?.contains(pan) else {
-			return
-		}
-		if hasPan {
-			return
-		}
-		
 		guard
 			let systemPop = interactivePopGestureRecognizer ,
 			let targets = (systemPop.value(forKey: "_targets") as? [NSObject])?.first ,
@@ -36,7 +19,7 @@ extension UINavigationController:UIGestureRecognizerDelegate{
 		else {
 			return
 		}
-		pan.addTarget(target, action: Selector(("handleNavigationTransition:")))
+		let pan = UIPanGestureRecognizer(target: target, action: Selector(("handleNavigationTransition:")))
 
 		pan.delegate = self
 		gesView.addGestureRecognizer(pan)
