@@ -1,0 +1,2 @@
+# newFullscreenPopGesture
+全屏左划pop手势swift版本
